@@ -6,13 +6,10 @@
 //
 // Execute `rustlings hint vecs2` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
-
 fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
     for i in v.iter_mut() {
-        // TODO: Fill this up so that each element in the Vec `v` is
-        // multiplied by 2.
-        ???
+        // 第一个函数体验迭代器：注意遍历可变引用时，需要使用 * 运算符来解引用指针以获取可变引用所指向的值，解引用之后才修改的是引用指向的实际值。
+        *i = *i * 2
     }
 
     // At this point, `v` should be equal to [4, 8, 12, 16, 20].
@@ -20,11 +17,7 @@ fn vec_loop(mut v: Vec<i32>) -> Vec<i32> {
 }
 
 fn vec_map(v: &Vec<i32>) -> Vec<i32> {
-    v.iter().map(|num| {
-        // TODO: Do the same thing as above - but instead of mutating the
-        // Vec, you can just return the new number!
-        ???
-    }).collect()
+    v.iter().map(|num| num * 2).collect()
 }
 
 #[cfg(test)]
